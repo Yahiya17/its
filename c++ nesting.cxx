@@ -1,0 +1,63 @@
+#include<iostream>
+#include<string>
+using namespace std;
+class binary{
+	private:
+	string s;
+	void chk_bin(void);
+	public:
+	void read(void);
+	void o(void);
+	void d(void);
+};
+void  binary :: read(void)
+{
+	cout<<"Enter a binary number : ";
+	cin>>s;
+}
+void binary :: chk_bin(void)
+{
+	for(int i=0; i<s.length();i++)
+	{
+		if(s.at(i)!='0' && s.at(i)!='1')
+		{
+		cout<<"Incorrect binary format";
+		exit(0);
+		}
+		
+	}
+}
+void binary :: o(void){
+	chk_bin();
+	for(int i=0; i<s.length();i++)
+	{
+		if(s.at(i)=='0')
+		{
+			s.at(i)='1';
+		}
+		else
+		{
+			s.at(i)='0';
+		}
+	}
+}
+void binary :: d(void)
+{
+	cout<<"displaying your binary number"<<endl;
+	for(int i=0; i<s.length();i++)
+	{
+		cout<<s.at(i);
+	}
+	cout<<endl;
+}
+int main()
+{
+	binary b;
+	b.read();
+//	b.chk_bin();
+	b.d();
+	b.o();
+	b.d();
+	
+	return 0;
+}
